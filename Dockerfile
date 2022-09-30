@@ -18,6 +18,7 @@ RUN pip3 install biomedicus
 RUN biomedicus download-data
 
 COPY biomedicus_deploy_config.yml .
+COPY biomedicus_default_pipeline.yml .
 COPY biomedicus.sh .
 
 RUN chmod +x biomedicus.sh
