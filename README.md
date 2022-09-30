@@ -10,5 +10,5 @@ docker logs biomedicus
 
 1. Add statements to dockerfile to copy over any files needed to run your processors.
 2. Modify biomedicus_deploy_config.yml to include your processors.
-3. Modify biomedicus_run_config.yml to include your processors.
+3. Modify biomedicus_default_pipeline.yml to include your processors.
 4. Build and run image as normal
