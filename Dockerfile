@@ -17,6 +17,7 @@ RUN python3 -m pip install --upgrade setuptools
 RUN pip3 install biomedicus
 RUN biomedicus download-data
 
+COPY biomedicus_deploy_config.yml .
 COPY biomedicus.sh .
 
 RUN chmod +x biomedicus.sh
