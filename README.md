@@ -2,7 +2,7 @@
 ```bash
 docker build -t biomedicus-single .
 docker run -d -it --name biomedicus --mount type=bind,source="$(pwd)"/input,target=/input --mount type=bind,source="$(pwd)"/output,target=/output biomedicus-single
-docker logs biomedicus
+docker logs -f biomedicus
 ```
 
 
@@ -12,3 +12,19 @@ docker logs biomedicus
 2. Modify biomedicus_deploy_config.yml to include your processors.
 3. Modify biomedicus_default_pipeline.yml to include your processors.
 4. Build and run image as normal
+
+## Issue with Docker Desktop on Mac or Windows
+
+On Docker desktop (Mac & Windows), a VM is used for dockerized applications. This VM has a setting that will kill any network listeners if they are open 5 minutes without communication from outside the VM.
+
+To resolve this issue change the following setting
+
+
+```json
+    "vpnKitMaxPortIdleTime": 0,
+```
+
+in the file located at
+
+ - macOS: ``~/Library/Group\ Containers/group.com.docker/settings.json``
+ - windows: ``%APPDATA%\Docker\settings.json``

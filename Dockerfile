@@ -15,7 +15,7 @@ RUN pip3 install --upgrade pip
 RUN python3 -m pip install --upgrade setuptools
 
 RUN pip3 install biomedicus
-RUN biomedicus download-data
+RUN biomedicus download-data --with-stanza
 
 COPY biomedicus_deploy_config.yml .
 COPY biomedicus_default_pipeline.yml .
