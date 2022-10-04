@@ -28,3 +28,6 @@ in the file located at
 
  - macOS: ``~/Library/Group\ Containers/group.com.docker/settings.json``
  - windows: ``%APPDATA%\Docker\settings.json``
+
+**Important**
+BioMedICUS also needs a decent amount of memory. I recommend setting the docker engine memory setting to at least 12GB under Preferences > Resources in the Docker Desktop app. If Docker runs out of memory it will kill random processes which will manifest as service unavailable errors (grpc status 13).
